@@ -24,7 +24,7 @@ EYE_ASPECT_RATIO_CONSEC_FRAMES = 50
 COUNTER = 0
 
 #Load face cascade which will be used to draw a rectangle around detected faces.
-face_cascade = cv2.CascadeClassifier("haarcascades/haarcascade_frontalface_default.xml")
+face_cascade = cv2.CascadeClassifier("./haarcascades/haarcascade_frontalface_default.xml")
 
 #This function calculates and return eye aspect ratio
 def eye_aspect_ratio(eye):
@@ -37,7 +37,7 @@ def eye_aspect_ratio(eye):
 
 #Load face detector and predictor, uses dlib shape predictor file
 detector = dlib.get_frontal_face_detector()
-predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
+predictor = dlib.shape_predictor('./shape_predictor_68_face_landmarks.dat')
 
 #Extract indexes of facial landmarks for the left and right eye
 (lStart, lEnd) = face_utils.FACIAL_LANDMARKS_IDXS['left_eye']
